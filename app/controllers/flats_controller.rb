@@ -1,7 +1,11 @@
 class FlatsController < ApplicationController
-  before_action :set_flat, only: %i[create edit update destroy]
+  before_action :set_flat, only: %i[show create edit update destroy]
   def index
     @flats = Flat.all
+  end
+
+  def show
+
   end
 
   def new
