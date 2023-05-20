@@ -1,11 +1,11 @@
 class FlatsController < ApplicationController
-  before_action :set_flat, only: %i[show create edit update destroy]
+  before_action :set_flat, only: %i[show edit update destroy]
   def index
     @flats = Flat.all
   end
 
   def show
-
+    # sef_flat
   end
 
   def new
@@ -13,7 +13,8 @@ class FlatsController < ApplicationController
   end
 
   def create
-    if @flat.create(flat_params)
+    @flat = Flat.new(flat_params)
+    if @flat.save
       redirect_to flat_path(@flat)
     else
       render :new, status: :unprocessable_entity
