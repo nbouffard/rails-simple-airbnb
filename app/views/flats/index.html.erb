@@ -14,7 +14,7 @@
           <hr>
           <%= link_to "More info", flat_path(flat), class: "card-link" %>
           <%= link_to "Edit", edit_flat_path(flat), class: "card-link" %>
-          <%= link_to "Remove", flats_path, data: { turbo_method: :delete, turbo_confirm: 'Are you aure?' }, class: "card-link" %>
+          <%= link_to "Remove", flat_path(flat), data: { turbo_method: :delete, turbo_confirm: 'Are you aure?' }, class: "card-link" %>
         </div>
       </div>
     <% end %>
