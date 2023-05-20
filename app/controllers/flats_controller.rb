@@ -1,19 +1,36 @@
 class FlatsController < ApplicationController
-  before_action :set_flat, only: %i[edit update]
+  before_action :set_flat, only: %i[create edit update destroy]
   def index
     @flats = Flat.all
   end
 
-  def edit
+  def new
+    @flat = Flat.new
+  end
 
+  def create
+    if @flat.create(flat_params)
+      redirect_to flat_path(@flat)
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
+  def edit
+    # sef_flat
   end
 
   def update
     if @flat.update!(flat_params)
-      redirect_to flat_path
+      redirect_to flat_path(@flat)
     else
       render :edit, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @flat.destroy
+    redirect_to flats_path, status: :see_other
   end
 
   private
