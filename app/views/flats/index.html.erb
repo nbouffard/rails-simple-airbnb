@@ -2,9 +2,9 @@
 <div class="container">
   <h1>All our Flats</h1>
   <p>All <%= @flats.count %> flats</p>
-  <div class="flex">
+  <div class="row flex">
     <% @flats.each do |flat| %>
-      <div class="card" style="width: 18rem;">
+      <div class="col-sm-12 card m-2" style="width: 18rem;">
         <div class="card-body">
           <h5 class="card-title"><%= flat.name %></h5>
           <p><%= flat.address %></p>
@@ -12,9 +12,9 @@
           <i class= "fa-solid fa-people-roof"> <%= flat.number_of_guests %></i>
           <i class="fa-solid fa-euro-sign"> <%= flat.price_per_night %></i>
           <hr>
-          <%= link_to "More info", flat_path(flat), class: "card-link" %>
-          <%= link_to "Edit", edit_flat_path(flat), class: "card-link" %>
-          <%= link_to "Remove", flat_path(flat), data: { turbo_method: :delete, turbo_confirm: 'Are you aure?' }, class: "card-link" %>
+          <%= link_to "More info", flat_path(flat), class: "card-link text-primary" %>
+          <%= link_to "Edit", edit_flat_path(flat), class: "card-link text-warning" %>
+          <%= link_to "Remove", flat_path(flat), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: "card-link text-danger" %>
         </div>
       </div>
     <% end %>
