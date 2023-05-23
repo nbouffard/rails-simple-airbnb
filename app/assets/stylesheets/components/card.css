@@ -1,8 +1,27 @@
-.card {
+.show-card {
+  margin-top: 20px;
+  margin-bottom: 20px;
   margin-right: 10px;
-  border: 1px solid grey;
+  background-color: rgb(251, 248, 248);
+  padding: 10px;
 }
 
-.flex {
+.show-flex {
   display: flex;
+  /* background: yellowgreen; */
+  justify-content: center;
+}
+
+.left-card {
+  /* background-color: tan; */
+  width: 60%;
+}
+
+.right-card {
+  /* background-color: aqua; */
+  width: 25%;
+}
+
+.card {
+  margin-bottom: 20px;
 }

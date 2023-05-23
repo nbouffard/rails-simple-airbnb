@@ -1,34 +1,38 @@
 <%= render 'navbar' %>
-<div class="container">
-  <div class="flex">
-    <div class="left-card">
-      <div class="flat-info">
-        <h1><%= @flat.name %></h1>
-        <p><%= @flat.address %></p>
-      </div>
-      <div class="flat-description">
-        <h2>A bit more about this flat...</h2>
-        <%= @flat.description %>
-        <%= image_tag('') %>
+<div class="show-container">
+  <div class="show-flex">
+    <div class="left-card row">
+      <div class="col-sm-12 col-md-12 col-lg-12">
+        <div class="flat-info show-card">
+          <h1><%= @flat.name %></h1>
+          <p><%= @flat.address %></p>
+        </div>
+        <div class="flat-description show-card">
+          <h2>A bit more about this flat...</h2>
+          <%= @flat.description %>
+          <%= image_tag('') %>
+        </div>
       </div>
     </div>
-    <div class="right-card">
-      <div class="book-dates">
-        <h3>Book this place!</h3>
-      </div>
-      <div class="details">
-        <h2>Details</h2>
-        <p><%= @flat.number_of_guests %> people</p>
-        <p><%= @flat.price_per_night %>€</p>
-      </div>
-      <div class="share">
-      <p>Share</p>
-      <div class="social-media-icon">
-        <i class="fa-brands fa-facebook"></i>
-        <i class="fa-brands fa-twitter"></i>
-        <i class="fa-brands fa-pinterest"></i>
-        <i class="fa-solid fa-at"></i>
-      </div>
+    <div class="right-card row">
+      <div class="col-sm-12 col-md-12">
+        <div class="book-dates show-card">
+          <h3>Book this place!</h3>
+        </div>
+        <div class="details show-card">
+          <h2>Details</h2>
+          <p><%= @flat.number_of_guests %> people</p>
+          <p><%= @flat.price_per_night %>€</p>
+        </div>
+        <div class="share show-card">
+        <p>Share</p>
+        <div class="social-media-icon">
+          <i class="fa-brands fa-facebook"></i>
+          <i class="fa-brands fa-twitter"></i>
+          <i class="fa-brands fa-pinterest"></i>
+          <i class="fa-solid fa-at"></i>
+        </div>
+        </div>
       </div>
     </div>
   </div>

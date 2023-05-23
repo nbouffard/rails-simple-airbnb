@@ -1,22 +1,24 @@
 <%= render 'navbar' %>
 <div class="container">
-  <h1>All our Flats</h1>
-  <p>All <%= @flats.count %> flats</p>
-  <div class="row flex">
-    <% @flats.each do |flat| %>
-      <div class="col-sm-12 card m-2" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title"><%= flat.name %></h5>
-          <p><%= flat.address %></p>
-          <p><%= flat.description %></p>
-          <i class= "fa-solid fa-people-roof"> <%= flat.number_of_guests %></i>
-          <i class="fa-solid fa-euro-sign"> <%= flat.price_per_night %></i>
-          <hr>
-          <%= link_to "More info", flat_path(flat), class: "card-link text-primary" %>
-          <%= link_to "Edit", edit_flat_path(flat), class: "card-link text-warning" %>
-          <%= link_to "Remove", flat_path(flat), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: "card-link text-danger" %>
+  <%# <div class="center-content"> %>
+    <h1>All our Flats</h1>
+    <p>All <%= @flats.count %> flats</p>
+    <div class="row flex ">
+      <% @flats.each do |flat| %>
+        <div class="col-sm-12 card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title"><%= flat.name %></h5>
+            <p><%= flat.address %></p>
+            <p><%= flat.description %></p>
+            <i class= "fa-solid fa-people-roof"> <%= flat.number_of_guests %></i>
+            <i class="fa-solid fa-euro-sign"> <%= flat.price_per_night %></i>
+            <hr>
+            <%= link_to "More info", flat_path(flat), class: "card-link text-primary" %>
+            <%= link_to "Edit", edit_flat_path(flat), class: "card-link text-warning" %>
+            <%= link_to "Remove", flat_path(flat), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: "card-link text-danger" %>
+          </div>
         </div>
-      </div>
-    <% end %>
-  </div>
+      <% end %>
+    </div>
+  <%# </div> %>
 </div>
